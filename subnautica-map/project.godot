@@ -11,12 +11,21 @@ config_version=5
 [application]
 
 config/name="SubnauticaMap"
+run/main_scene="uid://dups73l8pmina"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Debugger="*res://debugger.gd"
 
 [dotnet]
 
 project/assembly_name="SubnauticaMap"
+
+[global_group]
+
+Root=""
 
 [rendering]
 
