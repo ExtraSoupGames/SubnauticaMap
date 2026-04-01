@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://deg3u1h4u6wxi"]
-
-[ext_resource type="Script" uid="uid://coiks14yscoic" path="res://biome_element.gd" id="1_nlvho"]
-
-[node name="BiomeElement" type="Area2D"]
-script = ExtResource("1_nlvho")
-hovered = Color(1, 1, 1, 1)
-unhovered = Color(0.40069774, 0.40069774, 0.40069768, 1)
