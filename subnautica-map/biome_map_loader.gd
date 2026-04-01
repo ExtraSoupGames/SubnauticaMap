@@ -1,7 +1,6 @@
 class_name BiomeLoader extends RefCounted
 
 static func load_biomes() -> Array[BiomeInfo]:
-	print("Loading Biomes")
 	var biome_colours: Dictionary[Color, BiomeInfo] = {}
 	var biome_map: Image = preload("res://biome-map.png").get_image()
 	var map_width: int = biome_map.get_width()
@@ -17,5 +16,4 @@ static func load_biomes() -> Array[BiomeInfo]:
 	for biome in biome_colours.values():
 		out_biomes.append(biome)
 	out_biomes.remove_at(0)
-	print("Biomes loaded, biome count: ", out_biomes.size())
 	return out_biomes
