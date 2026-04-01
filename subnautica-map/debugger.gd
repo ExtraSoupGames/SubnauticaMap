@@ -11,6 +11,7 @@ func _ready():
 			for y in biome_size.y:
 				if biome_img.get_pixel(x,y) == Color.BLACK:
 					biome_img.set_pixel(x,y,Color(0, 0, 0, 0))
-		var show = Sprite2D.new()
-		show.texture = ImageTexture.create_from_image(biome_img)
-		root.add_child(show)
+		var biome_scene = preload("res://biome_element.tscn")
+		var new_element = biome_scene.instantiate()
+		new_element.populate(biome_map, biome_img)
+		root.add_child(new_element)
