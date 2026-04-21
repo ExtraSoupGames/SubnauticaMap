@@ -14,3 +14,6 @@ An interactive map of the game Subnautica, showing biomes, biome information, an
 - Blueprint finder tool
 - Egg finder tool
 - Leviathan locations
+
+## Link to deployed site
+[![Subnautica Map](https://img.shields.io/badge/Live_Demo-Subnautica_Map-0077B6?style=for-the-badge)](https://extrasoupgames.github.io/SubnauticaMap/)
