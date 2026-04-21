@@ -1,22 +1,20 @@
-class_name BiomeElement extends Area2D
-@export var selected: Color
-var is_hovered: bool
-var show: Sprite2D
+class_name BiomeElement extends TextureButton
 var ui_element: Label
 var id: int
 var color: Color
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
-	input_event.connect(_on_input_event)
+	pressed.connect(on_click)
 	
 func populate(biome_map: BitMap, biome_img: Image, element: Label, identification: int):
 	ui_element = element
 	id = identification
-	show = Sprite2D.new()
-	var texture = ImageTexture.create_from_image(biome_img)
-	show.texture = texture
-	add_child(show)
+	color = ui_element.biome_colours[id]
+	texture_click_mask = biome_map
+	texture_normal = ImageTexture.create_from_image(set_img_colour(biome_img, 0))
+	texture_hover = ImageTexture.create_from_image(set_img_colour(biome_img, 0.2))
+	texture_pressed = ImageTexture.create_from_image(set_img_colour(biome_img, 0.5))
 	var polygons = biome_map.opaque_to_polygons(
 		Rect2(Vector2.ZERO, biome_map.get_size()), 2.0
 	)
@@ -29,33 +27,29 @@ func populate(biome_map: BitMap, biome_img: Image, element: Label, identificatio
 			offset_poly.append(p - biome_map.get_size() / 2.0)
 		col.polygon = offset_poly
 		add_child(col)
-	is_hovered = false
+
 	if ui_element.hovered_biome == self:
 		ui_element.hovered_biome = null
 		
 func _on_mouse_entered():
-	color = ui_element.biome_colours[id]
-
-	show.modulate = color
-	is_hovered = true
 	ui_element.hovered_biome = self
 
 	
 func _on_mouse_exited():
-	if ui_element.selected_biome == self:
-		return
-	color = ui_element.biome_colours[id]
-
-	show.modulate = color
-	is_hovered = false
 	if ui_element.hovered_biome == self:
-		ui_element.hovered_biome = null #TODO remove highlight when a different biome is selected
+		ui_element.hovered_biome = null
 	
-func _on_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			print("Clicked this biome!")
-			ui_element.text = ui_element.biome_data[id]
-			ui_element.selected_biome = self
-			color = ui_element.biome_colours[id] - selected
-			show.modulate = color
+func on_click():
+	ui_element.text = ui_element.biome_data[id]
+	ui_element.selected_biome = self
+	
+	
+func set_img_colour(img: Image, factor: float) -> Image:
+	var out = img.duplicate()
+	for y in out.get_height():
+		for x in out.get_width():
+			var c = out.get_pixel(x, y)
+			if c == Color(0,0,0,0):
+				continue
+			out.set_pixel(x, y, color.darkened(factor))
+	return out

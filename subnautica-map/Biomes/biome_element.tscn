@@ -1,7 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://deg3u1h4u6wxi"]
+[gd_scene format=3 uid="uid://deg3u1h4u6wxi"]
 
 [ext_resource type="Script" uid="uid://coiks14yscoic" path="res://Biomes/biome_element.gd" id="1_nlvho"]
 
-[node name="BiomeElement" type="Area2D"]
+[node name="BiomeElement" type="TextureButton" unique_id=399982367]
+offset_right = 8.0
+offset_bottom = 8.0
 script = ExtResource("1_nlvho")
-selected = Color(0.12156863, 0.12156863, 0.12156863, 0)

@@ -4,7 +4,7 @@ var biome_colours: Dictionary = {}
 var selected_biome: BiomeElement
 var hovered_biome: BiomeElement
 
-func _ready():
+func _init():
 	biome_data[0] = "Dunes"
 	biome_data[1] = "Sea Treader's Path"
 	biome_data[2] = "Grand Reef"
