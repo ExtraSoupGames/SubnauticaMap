@@ -19,7 +19,7 @@ concurrency:
 env:
   GODOT_VERSION: "4.6"
   EXPORT_NAME: "SubnauticaMap"
-  PROJECT_PATH: "." 
+  PROJECT_PATH: "subnautica-map" 
 
 jobs:
   build:
