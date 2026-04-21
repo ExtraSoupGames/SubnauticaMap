@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dups73l8pmina"]
+[gd_scene format=3 uid="uid://dups73l8pmina"]
 
 [ext_resource type="Script" uid="uid://ddh0wmtk7b4im" path="res://biome_info_display.gd" id="1_ig7tw"]
 
@@ -11,9 +11,9 @@ gradient = SubResource("Gradient_7dm0k")
 [sub_resource type="Theme" id="Theme_7dm0k"]
 default_font_size = 20
 
-[node name="Camera2D" type="Camera2D"]
+[node name="Camera2D" type="Camera2D" unique_id=1253756927]
 
-[node name="Root" type="Control" parent="." groups=["Root"]]
+[node name="Root" type="Control" parent="." unique_id=1099521830 groups=["Root"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,10 +24,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Root"]
+[node name="Sprite2D" type="Sprite2D" parent="Root" unique_id=1509256597]
 texture = SubResource("GradientTexture2D_ig7tw")
 
-[node name="Label" type="Label" parent="Root"]
+[node name="Label" type="Label" parent="Root" unique_id=284391956]
 z_index = 1
 layout_mode = 0
 offset_left = 502.0
