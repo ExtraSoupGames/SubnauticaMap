@@ -2,7 +2,7 @@ extends Node
 var ui_element: Label
 func _ready():
 	var root = get_tree().get_first_node_in_group("Root")
-	ui_element = root.get_node("Label")
+	ui_element = get_tree().get_first_node_in_group("Label")
 	var biomes = BiomeLoader.load_biomes()
 	var running_biome_id = 0
 	for biome in biomes:

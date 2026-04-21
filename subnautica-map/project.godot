@@ -30,6 +30,7 @@ project/assembly_name="SubnauticaMap"
 [global_group]
 
 Root=""
+Label=""
 
 [rendering]
 

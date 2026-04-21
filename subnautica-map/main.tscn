@@ -13,13 +13,11 @@ default_font_size = 20
 
 [node name="Camera2D" type="Camera2D" unique_id=1253756927]
 
-[node name="Root" type="Control" parent="." unique_id=1099521830 groups=["Root"]]
+[node name="Root" type="Control" parent="." unique_id=1099521830]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -27,7 +25,7 @@ mouse_filter = 2
 [node name="Sprite2D" type="Sprite2D" parent="Root" unique_id=1509256597]
 texture = SubResource("GradientTexture2D_ig7tw")
 
-[node name="Label" type="Label" parent="Root" unique_id=284391956]
+[node name="Label" type="Label" parent="Root" unique_id=284391956 groups=["Label"]]
 z_index = 1
 layout_mode = 0
 offset_left = 502.0
@@ -37,3 +35,17 @@ offset_bottom = 12.0
 theme = SubResource("Theme_7dm0k")
 text = "test"
 script = ExtResource("1_ig7tw")
+
+[node name="BiomeRoot" type="Control" parent="." unique_id=761036194 groups=["Root"]]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = -512.0
+offset_bottom = -512.0
+grow_horizontal = 2
+grow_vertical = 2
